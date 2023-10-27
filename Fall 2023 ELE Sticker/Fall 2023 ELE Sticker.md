@@ -1,9 +1,8 @@
 ![[Pasted image 20231024134509.png]]
-# Base64 Starting String
-`VGhLIGV2aWwgbGVhZ3VLIG9mIGV2alwgaXMgd2F0Y2hpbmcgc28gYmV3YXJL` > `ThK evil leaguK of evj\ is watching so bewarK` > `The evil league of evil is watching so beware`
-
-# Barcode
-decodes to https://bit.ly/psu-cyber-2023
+# The Sticker
+* `VGhLIGV2aWwgbGVhZ3VLIG9mIGV2alwgaXMgd2F0Y2hpbmcgc28gYmV3YXJL` > `ThK evil leaguK of evj\ is watching so bewarK` > `The evil league of evil is watching so beware`
+* first barcode decodes to `https://bit.ly/psu-cyber-2023`
+* second barcode decodes to `Not this one`
 
 # Hydra
 
