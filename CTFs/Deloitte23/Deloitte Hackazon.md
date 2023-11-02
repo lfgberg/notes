@@ -73,3 +73,8 @@ Our forensics team managed to take a memory dump of the machine before it was sh
 Is there any information in this dump that we missed?
 ```
 * mem.dmp file
+* going to analyze with volatility
+![[Pasted image 20231101213635.png]]
+![[Pasted image 20231101213833.png]]
+![[Pasted image 20231101221435.png]]
+![[Pasted image 20231101215716.png]]
