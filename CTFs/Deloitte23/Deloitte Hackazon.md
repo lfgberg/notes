@@ -1,4 +1,4 @@
-## Introduction Challenge
+thu## Introduction Challenge
 * There is a flag hidden on the web page of this challenge
 ![[Pasted image 20231101182914.png]]
 * Inspect element, it's at the bottom
@@ -77,4 +77,5 @@ Is there any information in this dump that we missed?
 ![[Pasted image 20231101213635.png]]
 ![[Pasted image 20231101213833.png]]
 ![[Pasted image 20231101221435.png]]
-![[Pasted image 20231101215716.png]]
+![[Pasted image 20231101215716.png]] 
+0x724a250
