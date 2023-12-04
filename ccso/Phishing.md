@@ -1,4 +1,4 @@
-## Bypassing Link Protections
+10.10.105.51## Bypassing Link Protections
 * send your link in plaintext
 	* there's no hooks, so it doesn't get caught by link scanning
 	* outlook still is smart enough to render it as a link
