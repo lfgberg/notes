@@ -1,0 +1,6 @@
+drwxr-x---    2 1003     1003         4096 Apr 21  2023 .
+drwxr-x---    2 1003     1003         4096 Apr 21  2023 ..
+lrwxrwxrwx    1 0        0               9 Apr 21  2023 .bash_history -> /dev/null
+-rw-r--r--    1 1003     1003          220 Apr 19  2023 .bash_logout
+-rw-r--r--    1 1003     1003         3771 Apr 19  2023 .bashrc
+-rw-r--r--    1 1003     1003          807 Apr 19  2023 .profile
