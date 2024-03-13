@@ -8,8 +8,7 @@
 ![[image.png]]
 ![[ssh.png]]
 4. Install sliver
-* `sudo apt update`
-* `curl https://sliver.sh/install|sudo bash`
+* compile from source
 5. Configure the sliver server
 * update config file with port
 ```json
@@ -32,8 +31,11 @@
     "go_proxy": ""
 }
 ```
+* configure service
+* enable service
 * reload service `systemctl restart sliver`
-6. Configure operators
+1. Configure operators
 * `./sliver-server operator --name [name] --lhost [pub ip] --save [name].cfg --lport [lport]`
-7. Connect and enjoy!
-![[connection.png]]
+2. configure firewall
+3. Connect and enjoy!
+![[sliver-connection.png]]
